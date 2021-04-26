@@ -1,0 +1,32 @@
+<div class="principal" *ngIf="showPrincipal">
+    <h1>Bem vido ao Labolatório</h1>
+    <h1>Escolha a opção desejada</h1>
+    <br><br>
+    
+    <button type="button"  (click) = "cliclouButton('coleta')" style="width: 100px; padding: 5px; margin-left: 40px;">Coleta de exames</button>
+    <button type="button" (click) = "cliclouButton('retirada')"  style="width: 100px; padding: 5px;margin-left: 40px;">retiradas de resultados</button>
+    <button type="button" (click) = "cliclouButton('prioritario')"  style="width: 98px; padding: 5px; margin-left: 40px;">Melhor Idade - Prioritario</button><br><br><br><br><br><br><br>
+    <button type="button" (click) = "cliclouButton('administracao')"  style="width: 100px; height: 50px; padding: 5px; margin-left: 40px;">Administração</button>
+
+</div>
+<div class="fila-escolhida"  *ngIf="showFilaEscolhida" >
+    <h2>Tipo de atendimento escolhido</h2>
+    <input type="text" style="padding: 15px;" id="displayTipo" name="displayTipo" [value] = 'displayOpcao'  readonly> 
+    <h3>Posição na fila: </h3> 
+    <input type="text" style="padding: 15px;"  id="displayTipo" name="displayTipo" [value] = 'displayPosFila' readonly >
+    <button type="button" (click) = "cliclouButton('voltar')"  style="width: 100px; height: 50px; padding: 5px; margin-left: 15px;">Voltar</button>
+</div>
+
+
+<div class="administracao"  *ngIf="showAdministracao">
+    <h1>Situação da fila</h1>
+    <p>Coleta de exames</p>
+    <input [value] = 'displayColeta'  type="text" style="padding: 15px;"  id="displayADM" name="displayADM"  readonly>
+    <p>Retirada de resultados</p>
+    <input [value] = 'displayRetirada' type="text" style="padding: 15px;" id="displayADM" name="displayADM"  readonly>
+    <p>Preferencial</p>
+    <input [value] = 'displayPrioritario' type="text" style="padding: 15px;" id="displayADM" name="displayADM"  readonly>
+    <p>Total de pessoas no laboratório</p><br>
+    <input [value] = 'displayTotalFila' type="text" style="padding: 15px;" id="displayADM" name="displayADM"  readonly>
+    <button type="button" (click) = "cliclouButton('voltar')"  style="width: 100px; height: 50px; padding: 5px; margin-left: 15px;">Voltar</button>
+</div>
